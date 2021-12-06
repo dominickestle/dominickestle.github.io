@@ -38,11 +38,11 @@
 
         // example:
         createPlatform(175, 200, .5); 
-        createPlatform(335, 460, .5); //(335, 460, .5); //(335, 460, .7);
-        createPlatform(780, 542, .3); //(780, 542, .3); //(780, 542, .6);
-        createPlatform(35, 380, .129); //(35, 380, .129); //(35, 380, .35);
-        createPlatform(0, 270, .07); //(0, 270, .07);
-        createPlatform(760, 365, .23); //(760, 365, .23); //(760, 365, .3);
+        createPlatform(335, 460, .5); 
+        createPlatform(780, 542, .3); 
+        createPlatform(35, 380, .129);  
+        createPlatform(0, 270, .07);
+        createPlatform(760, 365, .23); 
         createPlatform(800, 82, .3);
         createPlatform(0, 105, .3);
         createPlatform(675, 200, .5);
