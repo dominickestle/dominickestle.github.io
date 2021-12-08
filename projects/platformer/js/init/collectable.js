@@ -9,7 +9,12 @@
         max: {assetKey: 'max', points: 20},
         steve: {assetKey: 'steve', points: 30},
         grace: {assetKey: 'grace', points: 40},
-        kennedi: {assetKey: 'kennedi', points: 50}
+        kennedi: {assetKey: 'kennedi', points: 50},
+        star: {assetKey: 'star', points: 10},
+        star2: {assetKey: 'star2', points: 30},
+        star3: {assetKey: 'star3', points: 40},
+        star4: {assetKey: 'star4', points: 50},
+        star5: {assetKey: 'star5', points: 100},
     };
     
     /**
@@ -37,11 +42,11 @@
         // ALL YOUR CODE GOES BELOW HERE ///////////////////////////////////////
         
         // example: 
-        createCollectable(type.steve, 1, 23);
-        createCollectable(type.steve, 830, 0);
-        createCollectable(type.steve, 765, 285);
-        createCollectable(type.steve, 475, 195);
-        createCollectable(type.steve, 25, 430);
+        createCollectable(type.star4, 1, 23);
+        createCollectable(type.star5, 810, 0);
+        createCollectable(type.star2, 765, 285);
+        createCollectable(type.star3, 475, 195);
+        createCollectable(type.star, 0, 400);
         
         
         // ALL YOUR CODE GOES ABOVE HERE ///////////////////////////////////////
