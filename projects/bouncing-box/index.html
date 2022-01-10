@@ -18,6 +18,7 @@
 		}
 		.board{
 			height: 100vh;
+			background-color: black;
 		}
 	</style>
 	<!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
@@ -47,8 +48,10 @@
 			box.on('click', handleBoxClick);
 
 			// moves the Box to a new position on the screen along the X-Axis
-			function moveBoxTo(newPositionX) {
+			function moveBoxTo(newPositionX, newPositionY) {
 				box.css("left", newPositionX);
+				box.css("top", newPositionY);
+				
 			}
 
 			// changes the text displayed on the Box
@@ -61,9 +64,14 @@
 			//////////////////////////////////////////////////////////////////
 			
 			// TODO 2 - Variable declarations 
+			var boardHeight = jQuery(window).height();
 			var positionX = 0;
 			var points = 0;
 			var speed = 10;
+			var positionY = 0;
+			var speedY = 10;
+			var randNum;
+			var randNumY;
 			
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
@@ -71,16 +79,24 @@
 			turn it around! 
 			*/
 			function update() {
-				moveBoxTo(positionX);
 				positionX = positionX + speed;
+				positionY = positionY + speedY;
 
-				if (positionX > boardWidth) {
+				moveBoxTo(positionX, positionY);
+				
+				if (positionX > boardWidth - 70) {
+					speed = -speed;
+				} else if (positionX < 0) {
 					speed = -speed;
 				}
-				if (positionX < 0) {
-					speed = -speed;
+				if (positionY > boardHeight - 70) {
+					speedY = -speedY;
+				} else if (positionY < 0) {
+					speedY = -speedY;
 				}
+
 			};
+
 
 			/* 
 			This Function will be called each time the box is clicked. Each time it is called,
@@ -88,15 +104,25 @@
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
-				positionX = 0;
+				randNum = Math.random() * boardWidth;
+				randNumY = Math.random() * boardHeight;
+				positionX = randNum;
+				positionY = randNumY;
 				changeBoxText(points);
 				points = points + 1;
 
-				if (speed > 0) {
+				if (speed > 0){
 					speed = speed + 3;
-				} if (speed < 0) {
+				} else if (speed < 0){
 					speed = speed - 3;
 				}
+				if (speedY > 0){
+					speedY = speedY + 3;
+				} else if (speedY < 0){
+					speedY = speedY - 3;
+				}
+			
+				
 
 			};
 
