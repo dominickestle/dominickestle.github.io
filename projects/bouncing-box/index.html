@@ -6,11 +6,14 @@
 	<script src="jquery.min.js"></script>
 	<style>
 		.box {
+			
 			width: 70px;
 			height: 70px;
-			background-color: teal;
 			font-size: 300%;
 			text-align: center;
+			color:blue;
+			font-weight: bold;
+			background-image: url("images/dvd.png");
 			display: block;
 			position: absolute;
 			top: 100px;
@@ -42,7 +45,7 @@
 			var boardWidth = board.width();	// the maximum X-Coordinate of the screen
 
 			// Every 50 milliseconds, call the update Function (see below)
-			setInterval(update, 50);
+			setInterval(update, 40);
 			
 			// Every time the box is clicked, call the handleBoxClick Function (see below)
 			box.on('click', handleBoxClick);
