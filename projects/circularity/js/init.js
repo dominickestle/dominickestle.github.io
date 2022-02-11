@@ -21,23 +21,31 @@ var init = function (window) {
         
         // TODO 1 : Declare and initialize our variables
 
-        var circle;
-        var circles = [];
+        var circle; //declared variable circle. left undefined. Will use later to hold individual circle.
+        var circles = []; //empty array waiting to hold circles.
 
         // TODO 2 : Create a function that draws a circle 
         
         function drawCircle(){
-            circle = draw.randomCircleInArea(canvas, true, true, '#999', 2);
-            physikz.addRandomVelocity(circle, canvas, 2.5, 2.5);
+            circle = draw.randomCircleInArea(canvas, true, true, '#999', 2); //draws the circle and stores it in the variable circle.
+            physikz.addRandomVelocity(circle, canvas, 10, 10); //adds a random velocity to the circle.
             view.addChild(circle);
-            circles.push(circle);
+            circles.push(circle); //pushes that single circle to the array circles.
         }
 
         // TODO 3 / 8 : Call the drawCircle() function 
 
-        for (var i = 0; i < 5; i++){
+        for (var i = 0; i < 100; i++){
             drawCircle(i);
         }
+
+        /*
+        drawCircle();
+        drawCircle();
+        drawCircle();
+        drawCircle();
+        drawCircle();
+        */
 
         ////////////////////////////////////////////////////////////
         ///////////////// PROGRAM LOGIC ////////////////////////////
@@ -67,7 +75,7 @@ var init = function (window) {
 
             // TODO 9 : Iterate over the array
            
-
+            
             
         }
     
@@ -83,15 +91,15 @@ var init = function (window) {
                 circle.x = 0;
             }
             // if the circle has gone past the LEFT side of the screen then place it on the RIGHT
-            else if (circle.x < 0) {
+            if (circle.x < 0) {
                 circle.x = canvas.width;
             } 
             // if the circle has gone past the TOP side of the screen then place it on the BOTTOM
-            else if (circle.y > canvas.height) {
+            if (circle.y > canvas.height) {
                 circle.y = 0;
             } 
             // if the circle has gone past the BOTTOM side of the screen then place it on the TOP
-            else if (circle.y < 0) {
+            if (circle.y < 0) {
                 circle.y = canvas.height;
             }
             
