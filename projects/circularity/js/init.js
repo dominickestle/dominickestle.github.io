@@ -28,7 +28,7 @@ var init = function (window) {
         
         function drawCircle(){
             circle = draw.randomCircleInArea(canvas, true, true, '#999', 2); //draws the circle and stores it in the variable circle.
-            physikz.addRandomVelocity(circle, canvas, 10, 10); //adds a random velocity to the circle.
+            physikz.addRandomVelocity(circle, canvas, 5, 5); //adds a random velocity to the circle.
             view.addChild(circle);
             circles.push(circle); //pushes that single circle to the array circles.
         }
@@ -36,10 +36,10 @@ var init = function (window) {
         // TODO 3 / 8 : Call the drawCircle() function 
 
         for (var i = 0; i < 100; i++){
-            drawCircle(i);
+            drawCircle();
         }
 
-        /*
+        /* I created a loop to get rid of this repeated code
         drawCircle();
         drawCircle();
         drawCircle();
@@ -59,24 +59,31 @@ var init = function (window) {
         function update() {
             // TODO 4 : Update the circle's position //
 
+            /* This gets deleted because this is repeated code and we iterated over the whole array with a loop to make there be less code.
             physikz.updatePosition(circles[0]);
             physikz.updatePosition(circles[1]);
             physikz.updatePosition(circles[2]);
             physikz.updatePosition(circles[3]);
             physikz.updatePosition(circles[4]);
+            */
             
             // TODO 5 / 10 : Call game.checkCirclePosition() on your circles.
            
+            /* This gets deleted because this is repeated code and we iterated over the whole array with a loop to make there be less code.
             game.checkCirclePosition(circles[0]);
             game.checkCirclePosition(circles[1]);
             game.checkCirclePosition(circles[2]);
             game.checkCirclePosition(circles[3]);
             game.checkCirclePosition(circles[4]);
+            */
 
             // TODO 9 : Iterate over the array
            
-            
-            
+            //this iterates over the entire array so that there is no repeated code.
+            for (var k = 0; k < circles.length; k++) {
+                physikz.updatePosition(circles[k]);
+                game.checkCirclePosition(circles[k]);
+            }
         }
     
         /* 
