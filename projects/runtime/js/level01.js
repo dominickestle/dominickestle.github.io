@@ -28,9 +28,24 @@ var level01 = function (window) {
         // TODO 6 and on go here
         // BEGIN EDITING YOUR CODE HERE
 
-        
-        
-        
+        function createSawBlade(x, y){
+            var hitZoneSize = 25; //creates the size of the hitzone
+            var damageFromObstacle = 10; //sets the damage of the obstacle
+            var sawBladeHitZone = game.createObstacle(hitZoneSize, damageFromObstacle); //creates the hitzone and stores it in this variable
+            sawBladeHitZone.x = x; //the x position of the hitzone
+            sawBladeHitZone.y = y; //the y position of the hitzone
+            game.addGameItem(sawBladeHitZone); //add the hitzone to the game
+            
+            var obstacleImage = draw.bitmap('img/sawblade.png'); //drawing the image and storing it in the variable
+            sawBladeHitZone.addChild(obstacleImage); //add the image to the hitzone so we can see it
+            obstacleImage.x = -25; //tweaks the image 25p ixels to the left
+            obstacleImage.y = -25; //tweaks the image 25 pixels up
+        }
+
+        createSawBlade(400, 360);
+        createSawBlade(600, 360);
+        createSawBlade(800, 360);
+
         // DO NOT EDIT CODE BELOW HERE
     }
 };

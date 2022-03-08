@@ -60,13 +60,14 @@ var background = function (window) {
             
             // TODO 5: Part 1 - Add buildings!     Q: This is before TODO 4 for a reason! Why?
             
+            //every time the loop runs it creates a building with an x and y value and pushes it to the array
             for(var i = 0; i < 5; i++) {
-                var buildingHeight = 300;
-                var building = draw.rect(75, buildingHeight, 'LightGray', 'Black', 1);
-                building.x = 200 * i;
-                building.y = groundY - buildingHeight + 2;
-                background.addChild(building);
-                buildings.push(building);
+                var buildingHeight = 300; //declares a variable called buildingHeight that holds the height of the building in pixels
+                var building = draw.rect(75, buildingHeight, 'gray', 'gray', 1); //declares a variable called building 
+                building.x = 200 * i; //adds 200 pixels to the x value every time the loop runs
+                building.y = groundY - buildingHeight + 2; //determines the y position of the buildings
+                background.addChild(building); //adds buildings to the background
+                buildings.push(building); //pushes building's data to the buildings array and stores it as an index
             }
 
             // TODO 4: Part 1 - Add a tree
@@ -99,6 +100,13 @@ var background = function (window) {
             
             // TODO 5: Part 2 - Parallax
             
+            //loops the buildings and moves them to the left by 0.5 pixels move
+            for (var i = 0; i < buildings.length; i++) { 
+                buildings[i].x = buildings[i].x - 0.5; //moves the builing's x position by 0.5 pixels
+                if (buildings[i].x < -75) { //checks to see if the building'x x position is off the left side and if it is it resets it to the right side 
+                    buildings[i].x = canvasWidth;
+                }
+            }
 
         } // end of update function - DO NOT DELETE
         
