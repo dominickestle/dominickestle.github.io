@@ -40,11 +40,45 @@ var level01 = function (window) {
             sawBladeHitZone.addChild(obstacleImage); //add the image to the hitzone so we can see it
             obstacleImage.x = -25; //tweaks the image 25p ixels to the left
             obstacleImage.y = -25; //tweaks the image 25 pixels up
+            sawBladeHitZone.rotationalVelocity = 10;
         }
 
         createSawBlade(400, 360);
         createSawBlade(600, 360);
         createSawBlade(800, 360);
+
+        function createEnemy(x, y){
+            var enemy = game.createGameItem('enemy',25); //creating the game item and storing it in the variable enemy
+            var redSquare = draw.rect(50,50,'red'); //creates a rectangle and stores as redSquare
+            redSquare.x = -25; 
+            redSquare.y = -25;
+            enemy.addChild(redSquare); //adds the red square to the enemy game item
+
+            enemy.x = x;
+            enemy.y = y;
+
+            game.addGameItem(enemy); //adds enemy to the game
+
+            enemy.velocityX = -1; //this causes the enemy to move one pixel to the left on the x position
+
+            enemy.rotationalVelocity = 25; //this make the enemy rotate
+
+            enemy.onPlayerCollision = function() {
+                console.log('The enemy has hit Halle');
+                game.changeIntegrity(-25);
+            };
+
+            enemy.onProjectileCollision = function() {
+                console.log('The projectile has hit Halle');
+                game.changeIntegrity(5);
+                game.increaseScore(10);
+                enemy.shrink();
+            };
+        }
+
+        createEnemy(450, groundY - 50);
+        createEnemy(650, groundY - 50);
+        createEnemy(850, groundY - 50);
 
         // DO NOT EDIT CODE BELOW HERE
     }
