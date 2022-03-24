@@ -72,12 +72,12 @@ var background = function (window) {
 
             // TODO 4: Part 1 - Add a tree
             
-            tree = draw.bitmap('img/tree.png'); //reassigns the drawn image tree to the variable tree
+            /*tree = draw.bitmap('img/tree.png'); //reassigns the drawn image tree to the variable tree
             tree.x = 600; //assigns an x value to the tree
             tree.y = groundY - 250; //assigns a y value to the tree
             //tree.scaleX = 0.5; //determines the x scale of the tree
             //tree.scaleY = 0.5; //determines the y scale of the tree
-            background.addChild(tree); //adds the tree to the background         
+            background.addChild(tree); //adds the tree to the background */        
             
         } // end of render function - DO NOT DELETE
         
@@ -92,11 +92,11 @@ var background = function (window) {
             
             // TODO 4: Part 2 - Move the tree!
             
-            tree.x = tree.x - 1; //taking the value of tree.x (x position) and decreasing it by one pixel every time the function runs
+            /*tree.x = tree.x - 1; //taking the value of tree.x (x position) and decreasing it by one pixel every time the function runs
 
             if (tree.x < -200) { //makes the tree move towards the left until it hits -200
                 tree.x = canvasWidth; //when the tree hits -200 it resets the tree to canvasWidth which is the right side of the screen
-            }
+            } */
             
             // TODO 5: Part 2 - Parallax
             

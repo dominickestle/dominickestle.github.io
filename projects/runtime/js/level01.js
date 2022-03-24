@@ -101,14 +101,14 @@ var level01 = function (window) {
             var blueSquare = draw.rect(50,50,'blue'); //creates a rectangle and stores as blueSquare
             blueSquare.x = -25; 
             blueSquare.y = -25;
-            reward.addChild(blueSquare); //adds the blu square to the enemy game item
+            reward.addChild(blueSquare); //adds the blue square to the enemy game item
 
             reward.x = x;
             reward.y = y;
 
             game.addGameItem(reward); //adds reward to the game
 
-            reward.velocityX = -1; //this causes the rward to move one pixel to the left on the x position
+            reward.velocityX = -1; //this causes the reward to move one pixel to the left on the x position
 
             reward.rotationalVelocity = 25; //this make the reward rotate
 
