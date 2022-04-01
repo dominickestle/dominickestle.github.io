@@ -118,10 +118,10 @@ var level01 = function (window) {
         function createEnemy(x, y){
             var enemy = game.createGameItem('enemy',25); //creating the game item and storing it in the variable enemy
             var goomba = draw.bitmap('img/GOOMBA.png'); //creates goomba and stores as goomba
-            goomba.x = -25; 
-            goomba.y = -25;
-            goomba.scaleX = 1;
-            goomba.scaleY = 1;
+            goomba.x = -25; //x position of the enemy
+            goomba.y = -25; //x position of the enemy
+            goomba.scaleX = 1; //x scale factor of the enemy
+            goomba.scaleY = 1; //y scale factor of the enemy
             enemy.addChild(goomba); //adds goomba to the enemy game item
 
             enemy.x = x;
@@ -133,28 +133,28 @@ var level01 = function (window) {
 
             enemy.onPlayerCollision = function() {
                 console.log('The enemy has hit Halle');
-                game.changeIntegrity(-25);
+                game.changeIntegrity(-25); //changes player health when the player hits the enemy
             };
 
             enemy.onProjectileCollision = function() {
                 console.log('The projectile has hit Halle');
-                game.changeIntegrity(5);
-                game.increaseScore(10);
-                enemy.shrink();
+                game.changeIntegrity(5); //changes health when the projectile hits the enemy
+                game.increaseScore(10); //Increases score when the projectile hits the enemy
+                enemy.shrink(); //causes the enemy to shrink when the projectile hits it
             };
         }
 
         function createBoss(x, y){
             var boss = game.createGameItem('boss', 100); //creating the game item and storing it in the variable enemy
             var bowser = draw.bitmap('img/bowser.png'); //creates boss and stores as bowser
-            bowser.x = -200; 
-            bowser.y = -300;
-            bowser.scaleX = 0.6;
-            bowser.scaleY = 0.6;
+            bowser.x = -200; //x position of the boss
+            bowser.y = -300; //x position of the boss
+            bowser.scaleX = 0.6; //x scale factor of the boss
+            bowser.scaleY = 0.6; //y scale factor of the boss 
             boss.addChild(bowser); //adds bowser to the boss game item
 
-            boss.x = x;
-            boss.y = y;
+            boss.x = x; //x position of the boss
+            boss.y = y; //the y position of the boss
 
             game.addGameItem(boss); //adds boss to the game
 
@@ -162,14 +162,14 @@ var level01 = function (window) {
 
             boss.onPlayerCollision = function() {
                 console.log('The boss has hit Halle');
-                game.changeIntegrity(-100);
+                game.changeIntegrity(-100); //changes player health when the player hits the enemy
             };
 
             boss.onProjectileCollision = function() {
                 console.log('The projectile has hit the boss');
-                game.changeIntegrity(100);
-                game.increaseScore(500);
-                boss.shrink();
+                game.changeIntegrity(100); //changes health when the projectile hits the enemy
+                game.increaseScore(500); //Increases score when the projectile hits the enemy
+                boss.shrink(); //causes the enemy to shrink when the projectile hits it
             };
         }
 
@@ -235,9 +235,9 @@ var level01 = function (window) {
 
             reward.onPlayerCollision = function() {
                 console.log('The reward has hit Halle');
-                game.changeIntegrity(25);
-                game.increaseScore(10);
-                reward.shrink();
+                game.changeIntegrity(25); //increases health when the player hits hit
+                game.increaseScore(10); //increases score when the player hits hit
+                reward.shrink(); //shrinks the reward when the player hits it
             };
         }
         
