@@ -22,8 +22,8 @@ var level01 = function (window) {
                 { "type": "fireball", "x": 2100, "y": 360 },
                 { "type": "fireball", "x": 2650, "y": 450 },
                 { "type": "fireball", "x": 6000, "y": 360 },
-                { "type": "fireball", "x": 6100, "y": 450 },
-                { "type": "fireball", "x": 6200, "y": 360 },
+                { "type": "fireball", "x": 6150, "y": 450 },
+                { "type": "fireball", "x": 6300, "y": 360 },
 
                 { "type": "enemy", "x": 450, "y": groundY - 50 },
                 { "type": "enemy", "x": 1050, "y": groundY - 50 },
